@@ -1,0 +1,43 @@
+{
+    "name": "YasAe)",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background/background.js"
+    },
+    "action": {
+        "default_popup": "ext/popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js",
+                "getdata.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "getdata.js",
+                "inject.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
+    "permissions": [
+        "storage",
+        "activeTab",
+        "declarativeContent",
+        "scripting",
+        "https://discord.com/"
+    ],
+    "host_permissions": [
+        "https://discord.com/"
+    ]
+}
